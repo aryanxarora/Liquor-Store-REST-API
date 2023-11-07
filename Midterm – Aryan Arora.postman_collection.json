@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "6f50db94-7c0b-4a65-a12a-3e5683c27c7d",
+		"name": "Midterm – Aryan Arora",
+		"description": "This postman collection is made to send GET and POST requests to test the midterm application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15330071"
+	},
+	"item": [
+		{
+			"name": "All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customers/find?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"find"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jolson\",\n    \"lastname\" : \"Cruz\",\n    \"age\" : \"24\",\n    \"email\" : \"iamjolsoncruz@gmail.com\",\n    \"address\" : \"288 Ave Grosvenor, Westmount, HX9 3C2\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Aryan\",\n    \"lastname\" : \"Arora\",\n    \"age\" : \"24\",\n    \"email\" : \"aryanxarora@gmail.com\",\n    \"address\" : \"106-630 Rue William, Montreal Canada, H3C 4C9\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customers/remove?id=52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"remove"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "52"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
