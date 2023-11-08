@@ -1,32 +1,28 @@
 package ca.vanier.liquorstoreapi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
 
-    // DATA MEMBERS
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String name;
     private String lastname;
     private int age;
     private String email;
-    private String address;
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<Address> address;
 
-    // UPDATE ALL VALUES
-    public  void setAll(Customer c){
+    public void setAll(Customer c){
         this.name = c.getName();
         this.lastname = c.getLastname();
         this.age = c.getAge();
         this.email = c.getEmail();
-        this.address = c.getAddress();
     }
 
-    // GETTERS AND SETTERS
     public Long getId() {
         return id;
     }
@@ -67,11 +63,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getAddress() {
+    public List<Address> getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(List<Address> address) {
         this.address = address;
     }
 }
